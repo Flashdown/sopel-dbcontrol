@@ -88,45 +88,45 @@ Processed entries are marked `sent=1` and cleaned up after 60 seconds.
 2. Place `dbcontrol.py` in your Sopel's plugins directory (e.g., `~/.sopel/plugins/`).
 3. Configure Sopel to load the plugin in your config file (e.g., `default.cfg`):
    ```
-[core]
-commands_on_connect = 
-	set irc_hide_version 1
-enable = dbcontrol
-exclude = 
-	xkcd
-	wiktionary
-	wikipedia
-	version
-	url
-	uptime
-	units
-	unicode_info
-	translate
-	tld
-	tell
-	seen
-	search
-	safety
-	reload
-	rand
-	pronouns
-	ping
-	lmgtfy
-	isup
-	invite
-	help
-	find_updates
-	find
-	emoticons
-	dice
-	currency
-	countdown
-	clock
-	choose
-	calc
-	announce
-	adminchannel
-	admin
+   [core]
+   commands_on_connect = 
+   	set irc_hide_version 1
+   enable = dbcontrol
+   exclude = 
+   	xkcd
+   	wiktionary
+   	wikipedia
+   	version
+   	url
+   	uptime
+   	units
+   	unicode_info
+   	translate
+   	tld
+   	tell
+   	seen
+   	search
+   	safety
+   	reload
+   	rand
+   	pronouns
+   	ping
+   	lmgtfy
+   	isup
+   	invite
+   	help
+   	find_updates
+   	find
+   	emoticons
+   	dice
+   	currency
+   	countdown
+   	clock
+   	choose
+   	calc
+   	announce
+   	adminchannel
+   	admin
    ```
 4. Set the DB path in the plugin code if needed: `DB_PATH = '/path/to/your/chat.db'`
 5. Run Sopel: `sopel -c default.cfg`
