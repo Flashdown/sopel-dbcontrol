@@ -17,7 +17,7 @@ This plugin runs on a Sopel IRC bot instance, handling all IRC connections and e
 ## Features
 
 ### Database Schema
-The plugin uses a SQLite database (configurable path, default: `/home/ircbot/.sopel/chat.db`) with the following tables:
+The plugin uses a SQLite database (configurable path, default: `~/.sopel/chat.db`) with the following tables (the plugin will automatically set up all tables on load if they are missing):
 
 - **channel_users**: Stores current users in joined channels and their privileges/flags.
   - Fields:
@@ -48,7 +48,6 @@ The plugin uses a SQLite database (configurable path, default: `/home/ircbot/.so
     - `sent` (INTEGER): 0 (pending) or 1 (sent).
     - `timestamp` (REAL): Unix timestamp for cleanup.
 
-The plugin automatically sets up these tables on load.
 
 ### Querying Data
 Your application can query the database to fetch:
@@ -78,7 +77,7 @@ Processed entries are marked `sent=1` and cleaned up after 60 seconds.
 
 ### Additional Behaviors
 - **Rate Limiting**: Prevents spam (10 msgs/10s, 50 msgs/60s; 3-min ban on violation).
-- **Filtering**: Skips logging URLs, commands starting with `!`, or control characters.
+- **Filtering**: Skips logging control characters.
 - **Private Chat Management**: Automatically creates `active_pchats` entries on PM send/receive. Your app can delete them to "close" chats.
 - **Event Logging**: Captures joins, parts, quits, kicks, modes, topics, etc., as formatted strings in `messages`.
 
