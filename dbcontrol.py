@@ -1,4 +1,4 @@
-# sopel-dbcontrol v0.1 Copyright (C) 2025 Enrico Heine https://github.com/Flashdown/sopel-dbcontrol
+# sopel-dbcontrol v0.2 Copyright (C) 2025 Enrico Heine https://github.com/Flashdown/sopel-dbcontrol
 # Licensed under the Eiffel Forum License 2.
 
 import sopel.plugin
@@ -8,9 +8,9 @@ import re
 from datetime import datetime
 from collections import defaultdict, deque
 
-DB_PATH = '/home/ircbot/.sopel/chat.db'  # Passe an, z.B. '/path/to/chat.db'
-LOG_FILTER_REGEX = re.compile(r'(http[s]?://|!command|[\x00-\x1F\x7F])')  # Erweitert: Skippe URLs, !command, Control-Chars
-COMMAND_SANITIZE_REGEX = re.compile(r'[\x00-\x1F\x7F]')  # Entferne Control-Chars; erweiterbar
+DB_PATH = '~/.sopel/chat.db'  # Passe an, z.B. '/path/to/chat.db'
+LOG_FILTER_REGEX = re.compile(r'([\x00-\x1F\x7F])') # Skippe Control-Chars
+COMMAND_SANITIZE_REGEX = re.compile(r'[\x00-\x1F\x7F]')  # Entferne Control-Chars
 
 # Rate Limiting Settings
 RATE_SHORT_WINDOW = 10  # Sekunden
